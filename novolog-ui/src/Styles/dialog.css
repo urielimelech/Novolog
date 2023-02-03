@@ -1,0 +1,12 @@
+.dialogContainer {
+    text-align: end !important;
+}
+.dialogButtonContainer{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.dialogTextField{
+    display: flex;
+    text-align: right !important;
+    position: relative !important;
+}
