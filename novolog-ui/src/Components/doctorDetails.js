@@ -14,7 +14,7 @@ export const DoctorDetails = ({ doctor = {}, languages = {} }) => {
         }
     })
     const contactDoc = phones.map((phone, i) => {
-        return <ContactDoc phone={phone?.number} key={i} />
+        return <ContactDoc id={doctor.id} phone={phone?.number} key={i} />
     })
 
     return <div className='doctorDetailsContainer'>

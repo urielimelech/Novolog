@@ -3,11 +3,14 @@ import '../Styles/contactDoc.css'
 import { Button } from "@mui/material"
 import { ContactDialog } from './contactDialog'
 import { text } from '../const'
+import { DoctorsController } from '../Controllers/doctorsController'
 
-export const ContactDoc = ({ phone = '' }) => {
+export const ContactDoc = ({ id = '', phone = '' }) => {
 
     const [phoneNumber, setPhoneNumber] = useState('')
     const [showContactForm, setShowContactForm] = useState(false)
+
+    const doctorController = new DoctorsController()
 
     useEffect(() => {
         setPhoneNumber(phoneWithDash())
@@ -18,7 +21,7 @@ export const ContactDoc = ({ phone = '' }) => {
     }
     const handleCloseContact = ({ name, contactPhone, email }) => {
         if (name && contactPhone && email) {
-            /*send to server contact details*/
+            doctorController.contactDoctor({ id, name, phone: contactPhone, email })
         }
         setShowContactForm(false)
     }
